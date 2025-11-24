@@ -151,13 +151,16 @@ END;$$
 
 DELIMITER ;
 
-# To check the mismatch, run the following query
-select EMP_ID, FIRST_NAME, LAST_NAME, 
-ROLE as ACTUAL_PROFILE,
-get_expected_profile(EXP) as EXPECTED_PROFILE
- from data_science_team
-where ROLE <> get_expected_profile(EXP);
+# call the function
+SELECT get_expected_profile(4) AS expected_profile;
+SELECT get_expected_profile(11) AS expected_profile;
+SELECT get_expected_profile(1) AS expected_profile;
 
+-- Check all employees together or check the mismatch 
+SELECT EMP_ID, FIRST_NAME, LAST_NAME, ROLE AS actual_profile,
+       get_expected_profile(EXP) AS expected_profile
+FROM data_science_team
+WHERE ROLE <> get_expected_profile(EXP);
 # AS A RESPOND TO THIS QUERY, WE GET EMPTY TABLE BECAUSE THERE'S NO MISMATCH ROLE, ALL EMPLOYEES ALREADY HAVE THE CORRECT JOB_PROFILE.
 ```
 
