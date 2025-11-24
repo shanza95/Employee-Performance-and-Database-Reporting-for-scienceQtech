@@ -94,7 +94,7 @@ WHERE SALARY >= 6000;
 select * from VIEW_SALARY;
 ```
 ## Task 10
- WA NESTED QUERY to find employees with experience of more than ten years.
+ WA nested Query to find employees with experience of more than ten years.
 
 ```sql
 select EMP_ID, FIRST_NAME, LAST_NAME, EXP from emp_record_table
