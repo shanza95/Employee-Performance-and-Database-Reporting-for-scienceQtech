@@ -121,16 +121,10 @@ call emp_exp();
  WAQ using stored functions in the project table to check whether the job profile assigned to each employee in the data science team matches the organization's set standard.
     
 The standard being:
-
-    - For an employee EXP <= 2 			---- 		'JUNIOR DATA SCIENTIST'
-	
-    - For an employee EXP = 2 - 5 		------ 		'ASSOCIATE DATA SCIENTIST',
-	
-	- For an employee EXP = 5 - 10 		------		'SENIOR DATA SCIENTIST',
-	
-	- For an employee EXP = 10 - 12 	------		'LEAD DATA SCIENTIST',
-	
-	- For an employee EXP = 12 - 16 	------		 'MANAGER'.
+- For an employee with experience less than or equal to 2 years assign 'JUNIOR DATA SCIENTIST',
+- For an employee with the experience of 2 to 5 years assign 'ASSOCIATE DATA SCIENTIST',
+- For an employee with the experience of 5 to 10 years assign 'SENIOR DATA SCIENTIST',
+- For an employee with the experience of 10 to 12 years assign 'LEAD DATA SCIENTIST',
 
 ```sql
 USE `emp_record`;
@@ -165,8 +159,9 @@ SELECT EMP_ID, FIRST_NAME, LAST_NAME, ROLE AS actual_profile,
        get_expected_profile(EXP) AS expected_profile
 FROM data_science_team
 WHERE ROLE <> get_expected_profile(EXP);
-# AS A RESPOND TO THIS QUERY, WE GET EMPTY TABLE BECAUSE THERE'S NO MISMATCH ROLE, ALL EMPLOYEES ALREADY HAVE THE CORRECT JOB_PROFILE.
 ```
+AS A RESPOND TO THIS QUERY, WE GET EMPTY TABLE BECAUSE THERE'S NO MISMATCH ROLE, ALL EMPLOYEES ALREADY HAVE THE CORRECT JOB_PROFILE.
+
 
 ## Task 13
 Create an index to improve the cost and performance of the query to find the employee whose FIRST_NAME is 'Eric' in the employee table after checking the execution plan.
