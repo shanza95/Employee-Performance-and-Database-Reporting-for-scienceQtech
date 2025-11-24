@@ -118,14 +118,18 @@ DELIMITER ;
 call emp_exp();
 ```
 ## Task 12
- WAQ using stored functions in the project table to check 
-	# whether the job profile assigned to each employee in the data science team matches the organization's set standard.
+ WAQ using stored functions in the project table to check whether the job profile assigned to each employee in the data science team matches the organization's set standard.
     
 The standard being:
+
     - For an employee EXP <= 2 			---- 		'JUNIOR DATA SCIENTIST'
+	
     - For an employee EXP = 2 - 5 		------ 		'ASSOCIATE DATA SCIENTIST',
+	
 	- For an employee EXP = 5 - 10 		------		'SENIOR DATA SCIENTIST',
+	
 	- For an employee EXP = 10 - 12 	------		'LEAD DATA SCIENTIST',
+	
 	- For an employee EXP = 12 - 16 	------		 'MANAGER'.
 
 ```sql
