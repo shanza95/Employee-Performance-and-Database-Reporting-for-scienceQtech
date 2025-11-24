@@ -33,7 +33,7 @@ Ultimately, these insights will contribute to the overall performance, fairness,
 | **Task 8**  | Rank employees by experience                     | [View Query](emp_record.md#task-8)  | [View Result](results/rank-employees-by-experience.csv)     |
 | **Task 9**  | View for employees with salary > 6000            | [View Query](emp_record.md#task-9)  | [View Result](results/employees-with-salary-over-6000.csv)  |
 | **Task 10** | Nested query: EXP > 10 years                     | [View Query](emp_record.md#task-10) | [View Result](results/employees-with-exp-over-10-years.csv) |
-| **Task 11** | Stored procedure: EXP > 3                        | [View Query](emp_record.md#task-11) | [View Result](results/stored-procedure-exp-over-3.csv)      |
+| **Task 11** | Stored procedure: EXP > 3                        | [View Query](emp_record.md#task-11) | [View Result](results/employees-with-exp-over-3.csv)      |
 | **Task 12** | Stored function: Data Science profile validation | [View Query](emp_record.md#task-12) | [View Result](results/data-science-profile-validation.csv)  |
 | **Task 13** | Index creation for optimization                  | [View Query](emp_record.md#task-13) | [View Result](results/index-creation-optimization.csv)      |
 | **Task 14** | Bonus calculation (5% × rating)                  | [View Query](emp_record.md#task-14) | [View Result](results/bonus-calculation.csv)                |
