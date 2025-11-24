@@ -1,65 +1,109 @@
 
-## project - ScienceQtech Employee Performance Mapping
+# Project - ScienceQtech Employee Performance Mapping
 
+## Database Setup
+```sql
 create database emp_record;
 use emp_record;
+```
 
-# 3. WAQ to fetch EMP_ID, FIRST_NAME, LAST_NAME, GENDER, and DEPARTMENT from the employee record table, 
-	# and make a list of employees and details of their department.
+## Task 1
+WAQ to fetch EMP_ID, FIRST_NAME, LAST_NAME, GENDER, and DEPARTMENT from the employee record table, and make a list of employees and details of their department.
+
+```sql
 select EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPT from emp_record_table;
+```
 
-# 4. WAQ to fetch EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPARTMENT, and EMP_RATING 
-	# if the EMP_RATING is:
-		# - less than 2,	greater than 4,		between two and four
-
+## Task 2
+WAQ to fetch EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPARTMENT, and EMP_RATING 
+Condition: EMP_RATING is
+		- less than 2,	
+		- greater than 4
+		- between two and four
+		
+```sql
 select EMP_ID, FIRST_NAME, LAST_NAME, GENDER, DEPT, EMP_RATING from emp_record_table
 WHERE EMP_RATING <=2 OR EMP_RATING >= 4;
+```
 
-# 5. WAQ to concatenate the FIRST NAME and the LAST_NAME of employees in the Finance department from the employee table 
-	# and then give the resultant column alias as NAME.
+## Task 3
+WAQ to concatenate the FIRST NAME and the LAST_NAME of employees in the Finance department from the employee table.
+Give the resultant column alias as NAME.
+
+```sql
 SELECT CONCAT(FIRST_NAME,' ',LAST_NAME) as NAME from emp_record_table 
 WHERE DEPT = 'FINANCE' ;
+```
 
-# 6. WAQ to list only those employees who have someone reporting to them. 
-	# Also, show the number of reporters (including the President).
+## Task 4
+WAQ to list only those employees who have someone reporting to them. 
+Also, show the number of reporters (including the President).
+
+```sql
 SELECT COUNT(EMP_ID) AS NO_OF_REPORTERS, MANAGER_ID FROM emp_record_table
 WHERE MANAGER_ID IS NOT NULL
 GROUP BY MANAGER_ID
 ORDER BY MANAGER_ID DESC; 
+```
 
-# 7. WAQ to list down all the employees from the healthcare and finance departments using union.
+## Task 5
+WAQ to list down all the employees from the healthcare and finance departments using union.
+
+```sql
 select * FROM emp_record_table WHERE DEPT = 'FINANCE' 
 UNION 
 select * FROM emp_record_table WHERE DEPT = 'HEALTHCARE';
+```
 
-# 8. WAQ to list down employee details such as EMP_ID, FIRST_NAME, LAST_NAME, ROLE, DEPARTMENT, AND EMP_RATING GROUPED BY DEPT.
-	# also include the respective employee rating along with the max emp rating for the department.
+## Task 6
+WAQ to list down employee details such as EMP_ID, FIRST_NAME, LAST_NAME, ROLE, DEPARTMENT, AND EMP_RATING GROUPED BY DEPT.
+Include the respective employee rating along with the max emp rating for the department.
+
+```sql
 select EMP_ID, FIRST_NAME, LAST_NAME, ROLE, DEPT, 
 MAX(EMP_RATING) OVER (PARTITION BY DEPT) as MAX_RATING from emp_record_table
 ORDER BY EMP_RATING DESC;
+```
 
-# 9. WAQ to calculate the minimum and maximum salary of the employees in each role.
+## Task 7
+ WAQ to calculate the minimum and maximum salary of the employees in each role.
+
+```sql
 select ROLE, MIN(SALARY) AS MIN_SALARY, MAX(SALARY) AS MAX_SALARY 
 from emp_record_table
 GROUP BY ROLE;
+```
 
-# 10. WAQ to assign ranks to each employee based on their experience.
+## Task 8
+ WAQ to assign ranks to each employee based on their experience.
+
+```sql
 SELECT EMP_ID, CONCAT(FIRST_NAME, ' ', LAST_NAME) AS EMP_NAME, DEPT, ROLE,
 RANK() OVER (ORDER BY EXP) AS EMP_EXP_RANKING
 from emp_record_table
 ORDER BY EXP DESC;
+```
 
-# 11. WAQ to create a view that displays the employees in various countries whose salary is more than six thousand.
+## Task 9
+ WAQ to create a view that displays the employees in various countries whose salary is more than six thousand.
+
+```sql
 create view VIEW_SALARY as
 select EMP_ID, COUNTRY, SALARY from emp_record_table
 WHERE SALARY >= 6000;
 select * from VIEW_SALARY;
+```
+## Task 10
+ WA NESTED QUERY to find employees with experience of more than ten years.
 
-# 12. # WA NESTED QUERY to find employees with experience of more than ten years.
+```sql
 select EMP_ID, FIRST_NAME, LAST_NAME, EXP from emp_record_table
 where EXP > (SELECT 10);
+```
+## Task 11
+ WAQ to create a stored procedure to retrieve the details of the employees whose experience is more than three years.
 
-# 13. WAQ to create a stored procedure to retrieve the details of the employees whose experience is more than three years.
+```sql
 USE `emp_record`;
 DROP procedure IF EXISTS `emp_exp`;
 
@@ -72,19 +116,19 @@ END$$
 
 DELIMITER ;
 call emp_exp();
-
-# 14. WAQ using stored functions in the project table to check 
+```
+## Task 12
+ WAQ using stored functions in the project table to check 
 	# whether the job profile assigned to each employee in the data science team matches the organization's set standard.
     
-# The standard being:
-    /* 
+The standard being:
     - For an employee EXP <= 2 			---- 		'JUNIOR DATA SCIENTIST'
     - For an employee EXP = 2 - 5 		------ 		'ASSOCIATE DATA SCIENTIST',
 	- For an employee EXP = 5 - 10 		------		'SENIOR DATA SCIENTIST',
 	- For an employee EXP = 10 - 12 	------		'LEAD DATA SCIENTIST',
 	- For an employee EXP = 12 - 16 	------		 'MANAGER'.
-*/
 
+```sql
 USE `emp_record`;
 DROP function IF EXISTS `get_expected_profile`;
 
@@ -115,10 +159,12 @@ get_expected_profile(EXP) as EXPECTED_PROFILE
 where ROLE <> get_expected_profile(EXP);
 
 # AS A RESPOND TO THIS QUERY, WE GET EMPTY TABLE BECAUSE THERE'S NO MISMATCH ROLE, ALL EMPLOYEES ALREADY HAVE THE CORRECT JOB_PROFILE.
+```
 
-# 15. Create an index to improve the cost and performance of the query to 
-		# find the employee whose FIRST_NAME is 'Eric' in the employee table after checking the execution plan.
+## Task 13
+Create an index to improve the cost and performance of the query to find the employee whose FIRST_NAME is 'Eric' in the employee table after checking the execution plan.
 
+```sql
 # Before indexing, we can check how the query performs:
 EXPLAIN SELECT* FROM emp_record_table where FIRST_NAME = 'Eric';
 
@@ -128,18 +174,24 @@ CREATE INDEX index_first_name ON emp_record_table(FIRST_NAME(10));
 EXPLAIN SELECT* FROM emp_record_table where FIRST_NAME = 'Eric';
 # or
 show indexes from emp_record_table;
+```
 
-# 16. WAQ to calculate the bonus for all the employees, based on their ratings and salaries
-	# (use the formula: 5% of salary * employee rating)
+## Task 14
+ WAQ to calculate the bonus for all the employees, based on their ratings and salaries
+(use the formula: 5% of salary * employee rating)
 
+```sql
 select EMP_ID, CONCAT(FIRST_NAME, ' ', LAST_NAME) AS NAME, EMP_RATING, SALARY,
 (SALARY *0.05)*EMP_RATING AS BONUS from emp_record_table;
+```
+## Task 15
+ WAQ to calculate the average salary distribution based on the continent and country.
 
-# 17. WAQ to calculate the average salary distribution based on the continent and country.
+```sql
 select CONTINENT, COUNTRY, 
 AVG(SALARY) AS AVG_SALARY from emp_record_table
 GROUP BY CONTINENT, COUNTRY
 ORDER BY CONTINENT, COUNTRY;
-
+```
 
 
