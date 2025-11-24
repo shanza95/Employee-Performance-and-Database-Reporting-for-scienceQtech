@@ -23,20 +23,20 @@ Ultimately, these insights will contribute to the overall performance, fairness,
 ### Tasks to be performed:
 | Task #      | Task Description                                 | SQL Query                           | Result CSV                                                  |
 | ----------- | ------------------------------------------------ | ----------------------------------- | ----------------------------------------------------------- |
-| **Task 1**  | Basic employee details                           | [View Query](emp_record.md#task-1)  | [View Result](results/basic-employee-details.csv)           |
-| **Task 2**  | Filter employees by rating                       | [View Query](emp_record.md#task-2)  | [View Result](results/filter-employees-by-rating.csv)       |
-| **Task 3**  | Concatenate FIRST_NAME + LAST_NAME               | [View Query](emp_record.md#task-3)  | [View Result](results/concatenate-employee-names.csv)       |
-| **Task 4**  | Employees who have reporters                     | [View Query](emp_record.md#task-4)  | [View Result](results/employees-with-reporters.csv)         |
-| **Task 5**  | Finance + Healthcare employees (UNION)           | [View Query](emp_record.md#task-5)  | [View Result](results/finance-and-healthcare-employees.csv) |
-| **Task 6**  | Max rating per department                        | [View Query](emp_record.md#task-6)  | [View Result](results/max-rating-per-department.csv)        |
-| **Task 7**  | Min/Max salary per role                          | [View Query](emp_record.md#task-7)  | [View Result](results/minmax-salary-by-role.csv)            |
-| **Task 8**  | Rank employees by experience                     | [View Query](emp_record.md#task-8)  | [View Result](results/rank-employees-by-experience.csv)     |
-| **Task 9**  | View for employees with salary > 6000            | [View Query](emp_record.md#task-9)  | [View Result](results/employees-with-salary-over-6000.csv)  |
-| **Task 10** | Nested query: EXP > 10 years                     | [View Query](emp_record.md#task-10) | [View Result](results/employees-with-exp-over-10-years.csv) |
-| **Task 11** | Stored procedure: EXP > 3                        | [View Query](emp_record.md#task-11) | [View Result](results/employees-with-exp-over-3.csv)      |
-| **Task 12** | Stored function: Data Science profile validation | [View Query](emp_record.md#task-12) | [View Result](results/data-science-profile-validation.csv)  |
-| **Task 13** | Index creation for optimization                  | [View Query](emp_record.md#task-13) | [View Result](results/index-creation-optimization.csv)      |
-| **Task 14** | Bonus calculation (5% × rating)                  | [View Query](emp_record.md#task-14) | [View Result](results/bonus-calculation.csv)                |
-| **Task 15** | Average salary by continent & country            | [View Query](emp_record.md#task-15) | [View Result](results/average-salary-by-region.csv)         |
+| **Task 1**  | Basic employee details                           | [View Query](emp_record.md#task-1)  | [View Result](results//basic-employee-details.csv/)           |
+| **Task 2**  | Filter employees by rating                       | [View Query](emp_record.md#task-2)  | [View Result](results//filter-employees-by-rating.csv/)       |
+| **Task 3**  | Concatenate FIRST_NAME + LAST_NAME               | [View Query](emp_record.md#task-3)  | [View Result](results//concatenate-employee-names.csv/)       |
+| **Task 4**  | Employees who have reporters                     | [View Query](emp_record.md#task-4)  | [View Result](results//employees-with-reporters.csv/)         |
+| **Task 5**  | Finance + Healthcare employees (UNION)           | [View Query](emp_record.md#task-5)  | [View Result](results//finance-and-healthcare-employees.csv/) |
+| **Task 6**  | Max rating per department                        | [View Query](emp_record.md#task-6)  | [View Result](results//max-rating-per-department.csv/)        |
+| **Task 7**  | Min/Max salary per role                          | [View Query](emp_record.md#task-7)  | [View Result](results//minmax-salary-by-role.csv/)            |
+| **Task 8**  | Rank employees by experience                     | [View Query](emp_record.md#task-8)  | [View Result](results//rank-employees-by-experience.csv/)     |
+| **Task 9**  | View for employees with salary > 6000            | [View Query](emp_record.md#task-9)  | [View Result](results//employees-with-salary-over-6000.csv/)  |
+| **Task 10** | Nested query: EXP > 10 years                     | [View Query](emp_record.md#task-10) | [View Result](results//employees-with-exp-over-10-years.csv/) |
+| **Task 11** | Stored procedure: EXP > 3                        | [View Query](emp_record.md#task-11) | [View Result](results//employees-with-exp-over-3.csv/)      |
+| **Task 12** | Stored function: Data Science profile validation | [View Query](emp_record.md#task-12) | [View Result](results//data-science-profile-validation.csv/)  |
+| **Task 13** | Index creation for optimization                  | [View Query](emp_record.md#task-13) | [View Result](results//index-creation-optimization.csv/)      |
+| **Task 14** | Bonus calculation (5% × rating)                  | [View Query](emp_record.md#task-14) | [View Result](results//bonus-calculation.csv/)                |
+| **Task 15** | Average salary by continent & country            | [View Query](emp_record.md#task-15) | [View Result](results//average-salary-by-region.csv/)         |
 
 
