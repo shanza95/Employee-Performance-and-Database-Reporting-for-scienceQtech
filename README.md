@@ -3,7 +3,7 @@
 ### Company: ScienceQTech
 ### Department Request: Human Resources and Management
 ### Datasets provided: 
-- data_science_team.csv
+- [data_science_team.csv](data_science_team.csv)
 - proj_table.csv
 - emp_record_table.csv
 
